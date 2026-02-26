@@ -11,11 +11,10 @@ function hashPassword(password: string) {
 
 async function main() {
   const admin = await prisma.user.upsert({
-    where: { id: 'demo-admin' },
+    where: { phone: '+201000000001' },
     update: {
       role: Role.ADMIN,
       name: 'Admin User',
-      phone: '+201000000001',
       username: 'admin',
       passwordHash: hashPassword('admin123'),
       address: 'Head Office',
@@ -34,11 +33,10 @@ async function main() {
   });
 
   const customer = await prisma.user.upsert({
-    where: { id: 'demo-customer' },
+    where: { phone: '+201000000002' },
     update: {
       role: Role.CUSTOMER,
       name: 'Demo Customer',
-      phone: '+201000000002',
       username: 'customer',
       passwordHash: hashPassword('customer123'),
       address: 'Nasr City, Cairo',
