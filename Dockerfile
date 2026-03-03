@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --legacy-peer-deps
 
-COPY tsconfig.json nest-cli.json ./
+COPY tsconfig.json tsconfig.seed.json nest-cli.json ./
 COPY src ./src
 COPY prisma ./prisma
 
