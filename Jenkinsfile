@@ -1,6 +1,7 @@
 pipeline {
-  agent any
-
+  agent {
+    docker { image 'node:20-alpine' } 
+  }
   options {
     timestamps()
     // Discard old builds: keep last 10
