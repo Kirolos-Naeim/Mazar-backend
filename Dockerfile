@@ -41,9 +41,7 @@ COPY --from=builder /app/dist ./dist
 # Expose API port
 EXPOSE 4000
 
-# Expected env vars at runtime:
-ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/mvp_delivery?schema=public"
-ENV JWT_SECRET="dev-secret"
+# Expected env vars at runtime (in Kubernetes / Docker runtime):
 # - DATABASE_URL
 # - JWT_SECRET
 # - CORS_ORIGIN (comma-separated origins)
