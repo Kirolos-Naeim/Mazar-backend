@@ -50,4 +50,4 @@ EXPOSE 4000
 # - JWT_SECRET
 # - CORS_ORIGIN (comma-separated origins)
 
-CMD ["node", "dist/src/main.js"]
+CMD ["sh", "-c", "npx prisma db push && node dist/prisma/seed.js && node dist/src/main.js"]
