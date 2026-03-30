@@ -32,6 +32,9 @@ FROM node:20-slim AS runtime
 
 WORKDIR /app
 
+# Install OpenSSL for Prisma
+RUN apt-get update -y && apt-get install -y openssl
+
 ENV NODE_ENV=production
 
 # Copy pruned node_modules and Prisma artifacts from builder
